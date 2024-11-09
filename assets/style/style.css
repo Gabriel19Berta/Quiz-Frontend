@@ -1,0 +1,42 @@
+:root {
+    --html-bg: #FFF1E9;
+    --css-bg: #E0FDEF;
+    --js-bg: #EBF0FF;
+    --acessibilidade-bg:#F6E7FF;
+    --texto-color: #313E51;
+    --texto-color-p: #626C7F;
+    --roxo: #A729F5;
+    --bg-cor: white;
+    --button-bg: white;
+    --option-bg: #F4F6FA;
+    --option-color: #626C7F;
+    --correct-color: #26D782;
+    --invalido-cor: #EE5454;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    background-color: #313E51;
+}
+
+main {
+    background-image: url(/assets/img/pattern-background-desktop-dark.svg);
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.contain-painel-escolha {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+}
