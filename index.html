@@ -4,34 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/style/style.css">
 
     <title>Quiz Web</title>
 </head>
 <body>
     <main>
-        <div class="muda-tema">
-
-        </div>
-
-        <div class="contain-painel-escolha">
-            <div>
+        <div class="contain-painel-inicial">
+            <div class="contain-txt-bem-vindo">
                 <div class="txt-bem-vindo">
-                    <p>Bem-vindo ao nosso <br>
-                    <span>Frontend Quiz</span></p>
+                    <p>Bem-vindo ao nosso</p>
+                    <p class="txt-front-quiz">Frontend Quiz</p>
                 </div>
                 <div class="txt-escolher">
-                    <p>Escolha um tema para começar</p>
+                    <p>Escolha um tema para começar.</p>
                 </div>
             </div>
-            <div>
-                <ul>
-                    <ol>HTML</ol>
-                    <ol>CSS</ol>
-                    <ol>JavaScript</ol>
-                    <ol>Acessibilidade</ol>
-                </ul>
+            <div class="contain-temas">
+                <button id="html" class="opcao-tema">
+                  <div class="contain-botao-icone cotain-img-html">
+                    <img src="assets/img/icon-html.svg" alt="html ícone">
+                  </div>
+                  <span>HTML</span>
+                </button>
+                <button id="css" class="opcao-tema">
+                  <div class="contain-botao-icone cotain-img-css">
+                    <img src="assets/img/icon-css.svg" alt="css ícone">
+                  </div>
+                  <span>CSS</span>
+                </button>
+                <button id="js" class="opcao-tema">
+                  <div class="contain-botao-icone cotain-img-js">
+                    <img src="assets/img/icon-js.svg" alt="javascript ícone">
+                  </div>
+                  <span>JavaScript</span>
+                </button>
+                <button id="acessibilidade" class="opcao-tema">
+                  <div class=" contain-botao-icone cotain-img-acessibilidade">
+                    <img src="assets/img/icon-accessibility.svg" alt="Acessibilidade ícone">
+                  </div>
+                  <span>Acessibilidade</span>
+                </button>
             </div>
         </div>
     </main>

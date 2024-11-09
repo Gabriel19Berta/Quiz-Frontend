@@ -1,15 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 :root {
     --html-bg: #FFF1E9;
     --css-bg: #E0FDEF;
     --js-bg: #EBF0FF;
     --acessibilidade-bg:#F6E7FF;
     --texto-color: #313E51;
-    --texto-color-p: #626C7F;
+    --texto-color-p: #949eaf;
+    --bg-botao: #3B4D66;
     --roxo: #A729F5;
-    --bg-cor: white;
-    --button-bg: white;
     --option-bg: #F4F6FA;
-    --option-color: #626C7F;
     --correct-color: #26D782;
     --invalido-cor: #EE5454;
 }
@@ -18,10 +18,11 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+    font-family: "Rubik", Arial, sans-serif;
 }
 
 body {
-    background-color: #313E51;
+    background-color: var(--texto-color);
 }
 
 main {
@@ -34,9 +35,87 @@ main {
 }
 
 
-
-.contain-painel-escolha {
+/*============ TEXTO BEM-VINDO ============*/
+.contain-painel-inicial {
     display: flex;
     justify-content: space-evenly;
     width: 80%;
+}
+
+.contain-txt-bem-vindo {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.txt-bem-vindo {
+    font-size: 60px;
+    color: #fff;
+    font-weight: 100;
+}
+
+.txt-front-quiz {
+    font-weight: bold;
+}
+
+.txt-escolher {
+    color: var(--texto-color-p);
+    font-weight: 400;
+    font-style: italic;
+}
+
+/*============ ESCOLHER TEMA ============*/
+.contain-temas {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.opcao-tema {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--bg-botao);
+    color: var(--texto-color);
+    width: 500px;
+    height: 80px;
+    border: none;
+    border-radius: .75rem;
+    padding: .75rem;
+}
+
+.opcao-tema span {
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.contain-botao-icone {
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cotain-img-html {
+    background-color: var(--html-bg);
+}
+
+.cotain-img-css {
+    background-color: var(--css-bg);
+}
+
+.cotain-img-js {
+    background-color: var(--js-bg);
+}
+
+.cotain-img-acessibilidade {
+    background-color: var(--acessibilidade-bg);
 }
