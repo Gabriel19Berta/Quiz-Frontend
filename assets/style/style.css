@@ -21,6 +21,11 @@
     font-family: "Rubik", Arial, sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+}
+
 body {
     background-color: var(--texto-color);
 }
@@ -32,6 +37,29 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/*============ CABEÇALHO ============*/
+.menu-nav {
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    height: 50px;
+    align-items: center;
+    font-size: 20px;
+    background: rgb(59,77,102);
+    background: linear-gradient(90deg, #3b4d66 30%, #949eaf 90%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+.lista-opcoes {
+    display: flex;
+    gap: 30px;
+}
+
+.opcao-lista a {
+    color: #fff;
 }
 
 
@@ -59,7 +87,7 @@ main {
 }
 
 .txt-escolher {
-    color: var(--texto-color-p);
+    color: #949eaf;
     font-weight: 400;
     font-style: italic;
 }

@@ -10,44 +10,56 @@
     <title>Quiz Web</title>
 </head>
 <body>
-    <main>
-        <div class="contain-painel-inicial">
-            <div class="contain-txt-bem-vindo">
-                <div class="txt-bem-vindo">
-                    <p>Bem-vindo ao nosso</p>
-                    <p class="txt-front-quiz">Frontend Quiz</p>
+  <header>
+    
+
+    <nav class="menu-nav">
+      <i class="ri-user-line" class="icone-perfil"></i>
+      <ul class="lista-opcoes">
+        <li class="opcao-lista"><a href="#">Sobre</a></li>
+        <li class="opcao-lista"><a href="#">Contato</a></li>
+        <li class="opcao-lista"><a href="#">Tabela</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+      <div class="contain-painel-inicial">
+          <div class="contain-txt-bem-vindo">
+              <div class="txt-bem-vindo">
+                  <p>Bem-vindo ao nosso</p>
+                  <p class="txt-front-quiz">Frontend Quiz</p>
+              </div>
+              <div class="txt-escolher">
+                  <p>Escolha um tema para começar.</p>
+              </div>
+          </div>
+          <div class="contain-temas">
+              <button id="html" class="opcao-tema">
+                <div class="contain-botao-icone cotain-img-html">
+                  <img src="assets/img/icon-html.svg" alt="html ícone">
                 </div>
-                <div class="txt-escolher">
-                    <p>Escolha um tema para começar.</p>
+                <span>HTML</span>
+              </button>
+              <button id="css" class="opcao-tema">
+                <div class="contain-botao-icone cotain-img-css">
+                  <img src="assets/img/icon-css.svg" alt="css ícone">
                 </div>
-            </div>
-            <div class="contain-temas">
-                <button id="html" class="opcao-tema">
-                  <div class="contain-botao-icone cotain-img-html">
-                    <img src="assets/img/icon-html.svg" alt="html ícone">
-                  </div>
-                  <span>HTML</span>
-                </button>
-                <button id="css" class="opcao-tema">
-                  <div class="contain-botao-icone cotain-img-css">
-                    <img src="assets/img/icon-css.svg" alt="css ícone">
-                  </div>
-                  <span>CSS</span>
-                </button>
-                <button id="js" class="opcao-tema">
-                  <div class="contain-botao-icone cotain-img-js">
-                    <img src="assets/img/icon-js.svg" alt="javascript ícone">
-                  </div>
-                  <span>JavaScript</span>
-                </button>
-                <button id="acessibilidade" class="opcao-tema">
-                  <div class=" contain-botao-icone cotain-img-acessibilidade">
-                    <img src="assets/img/icon-accessibility.svg" alt="Acessibilidade ícone">
-                  </div>
-                  <span>Acessibilidade</span>
-                </button>
-            </div>
-        </div>
-    </main>
+                <span>CSS</span>
+              </button>
+              <button id="js" class="opcao-tema">
+                <div class="contain-botao-icone cotain-img-js">
+                  <img src="assets/img/icon-js.svg" alt="javascript ícone">
+                </div>
+                <span>JavaScript</span>
+              </button>
+              <button id="acessibilidade" class="opcao-tema">
+                <div class=" contain-botao-icone cotain-img-acessibilidade">
+                  <img src="assets/img/icon-accessibility.svg" alt="Acessibilidade ícone">
+                </div>
+                <span>Acessibilidade</span>
+              </button>
+          </div>
+      </div>
+  </main>
 </body>
 </html>
