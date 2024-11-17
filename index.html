@@ -3,63 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/style/style.css">
-
-    <title>Quiz Web</title>
+    <title>Quiz Front</title>
 </head>
 <body>
-  <header>
-    
-
-    <nav class="menu-nav">
-      <i class="ri-user-line" class="icone-perfil"></i>
-      <ul class="lista-opcoes">
-        <li class="opcao-lista"><a href="#">Sobre</a></li>
-        <li class="opcao-lista"><a href="#">Contato</a></li>
-        <li class="opcao-lista"><a href="#">Tabela</a></li>
-      </ul>
-    </nav>
-  </header>
   <main>
-      <div class="contain-painel-inicial">
-          <div class="contain-txt-bem-vindo">
-              <div class="txt-bem-vindo">
-                  <p>Bem-vindo ao nosso</p>
-                  <p class="txt-front-quiz">Frontend Quiz</p>
-              </div>
-              <div class="txt-escolher">
-                  <p>Escolha um tema para começar.</p>
-              </div>
+    <!-- ALTERAR TEMA -->
+    <div class="contain-tema">
+      <div class="contain-sol">
+        <img src="assets/img/icon-sun-dark.svg" alt="Sol">
+      </div>
+      <div class="switch">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" class="slider"></label>
+      </div>
+      <div class="contain-lua">
+        <img src="assets/img/icon-moon-dark.svg" alt="Lua">
+      </div>
+    </div>
+
+    <!-- <div class="contain-painel-inicial">
+      <div class="contain-txt-bem-vindo">
+          <div class="txt-bem-vindo">
+              <p>Bem-vindo ao nosso</p>
+              <p class="txt-front-quiz">Frontend Quiz</p>
           </div>
-          <div class="contain-temas">
-              <button id="html" class="opcao-tema">
-                <div class="contain-botao-icone cotain-img-html">
-                  <img src="assets/img/icon-html.svg" alt="html ícone">
-                </div>
-                <span>HTML</span>
-              </button>
-              <button id="css" class="opcao-tema">
-                <div class="contain-botao-icone cotain-img-css">
-                  <img src="assets/img/icon-css.svg" alt="css ícone">
-                </div>
-                <span>CSS</span>
-              </button>
-              <button id="js" class="opcao-tema">
-                <div class="contain-botao-icone cotain-img-js">
-                  <img src="assets/img/icon-js.svg" alt="javascript ícone">
-                </div>
-                <span>JavaScript</span>
-              </button>
-              <button id="acessibilidade" class="opcao-tema">
-                <div class=" contain-botao-icone cotain-img-acessibilidade">
-                  <img src="assets/img/icon-accessibility.svg" alt="Acessibilidade ícone">
-                </div>
-                <span>Acessibilidade</span>
-              </button>
+          <div class="txt-escolher">
+              <p>Escolha um tema para começar.</p>
           </div>
       </div>
+      <div class="contain-temas">
+          <button id="html" class="opcao-tema">
+            <div class="contain-botao-icone cotain-img-html">
+              <img src="assets/img/icon-html.svg" alt="html ícone">
+            </div>
+            <span>HTML</span>
+          </button>
+          <button id="css" class="opcao-tema">
+            <div class="contain-botao-icone cotain-img-css">
+              <img src="assets/img/icon-css.svg" alt="css ícone">
+            </div>
+            <span>CSS</span>
+          </button>
+          <button id="js" class="opcao-tema">
+            <div class="contain-botao-icone cotain-img-js">
+              <img src="assets/img/icon-js.svg" alt="javascript ícone">
+            </div>
+            <span>JavaScript</span>
+          </button>
+          <button id="acessibilidade" class="opcao-tema">
+            <div class=" contain-botao-icone cotain-img-acessibilidade">
+              <img src="assets/img/icon-accessibility.svg" alt="Acessibilidade ícone">
+            </div>
+            <span>Acessibilidade</span>
+          </button>
+      </div>
+    </div> -->
   </main>
 </body>
 </html>
