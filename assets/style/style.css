@@ -7,7 +7,7 @@
     --acessibilidade-bg:#F6E7FF;
     --bg-cor: #ffffff;
     --texto-color: #313E51;
-    --texto-color-p: #949eaf;
+    --texto-color-p: #626C7F;
     --bg-botao: #3B4D66;
     --roxo: #A729F5;
     --option-bg: #F4F6FA;
@@ -21,7 +21,6 @@
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 body {
@@ -47,17 +46,17 @@ body {
     position: relative;
     width: 50px;
     height: 25px;
-  }
+}
   
   /* Estilização do input (invisível) */
-  .switch input {
+.switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
+}
   
   /* Estilização da "carcaça" do botão */
-  .slider {
+.slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -67,10 +66,10 @@ body {
     background-color: #ccc;
     border-radius: 25px;
     transition: 0.4s;
-  }
+}
   
   /* Estilização do círculo que se move */
-  .slider::before {
+.slider::before {
     position: absolute;
     content: "";
     height: 19px;
@@ -80,13 +79,43 @@ body {
     background-color: white;
     border-radius: 50%;
     transition: 0.4s;
-  }
+}
   
   /* Alterações quando o checkbox está ativado */
-  input:checked + .slider {
+input:checked + .slider {
     background-color: #a64eff;
-  }
+}
   
-  input:checked + .slider::before {
+input:checked + .slider::before {
     transform: translateX(25px);
-  }
+}
+
+/* ========= CONTAIN LADO ESQUERDO ========= */
+.contain-principal {
+    padding: 90px 60px 0 20px;
+}
+
+.contain-txt {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    color: var(--texto-color);
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.contain-txt h1 {
+    font-weight: 400;
+}
+
+.txt-front-quiz {
+    display: block;
+    font-weight: bold;
+}
+
+.contain-txt p {
+    font-size: 16px;
+    font-style: italic;
+    font-weight: normal;
+    color: var(--texto-color-p);
+}
