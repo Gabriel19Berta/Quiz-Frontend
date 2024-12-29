@@ -3,37 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/style/style.css">
-
-    <title>Quiz Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <script src="assets/js/script.js"></script>
+    <title>Quiz Front</title>
 </head>
 <body>
-    <main>
-        <div class="muda-tema">
-
+  <main>
+    <!-- ALTERAR TEMA -->
+    <div class="contain-header">
+      <div class="menu-container">
+        <span class="menu-nav">
+          <i class="ri-align-justify"></i>
+        </span>
+        <div class="menu-options">
+          <a href="#javascript">Perfil</a>
+          <a href="assets/paginas/sobre.html">Sobre</a>
         </div>
-
-        <div class="contain-painel-escolha">
-            <div>
-                <div class="txt-bem-vindo">
-                    <p>Bem-vindo ao nosso <br>
-                    <span>Frontend Quiz</span></p>
-                </div>
-                <div class="txt-escolher">
-                    <p>Escolha um tema para começar</p>
-                </div>
-            </div>
-            <div>
-                <ul>
-                    <ol>HTML</ol>
-                    <ol>CSS</ol>
-                    <ol>JavaScript</ol>
-                    <ol>Acessibilidade</ol>
-                </ul>
-            </div>
+      </div>
+      <div class="contain-tema">
+        <div class="contain-sol">
+          <img src="assets/img/icon-sun-dark.svg" alt="Sol">
         </div>
-    </main>
+        <div class="switch">
+          <input type="checkbox" id="toggle" />
+          <label for="toggle" class="slider"></label>
+        </div>
+        <div class="contain-lua">
+          <img src="assets/img/icon-moon-dark.svg" alt="Lua">
+        </div>
+      </div>
+    </div>
+
+    <!-- PRINCIPAL -->
+    <div class="contain-principal">
+      <div class="contain-txt">
+        <h1>Bem-vindo ao nosso <span class="txt-front-quiz">Frontend Quiz</span></h1>
+        <p>Escolha um tema para começar:</p>
+      </div>
+      <div class="contain-temas">
+          <button id="html" class="opcao-tema">
+            <div class="contain-img contain-img-html">
+              <img src="assets/img/icon-html.svg" alt="html ícone">
+            </div>
+            <span>HTML</span>
+          </button>
+          <button id="css" class="opcao-tema">
+            <div class="contain-img contain-img-css">
+              <img src="assets/img/icon-css.svg" alt="css ícone">
+            </div>
+            <span>CSS</span>
+          </button>
+          <button id="js" class="opcao-tema">
+            <div class="contain-img contain-img-js">
+              <img src="assets/img/icon-js.svg" alt="javascript ícone">
+            </div>
+            <span>JavaScript</span>
+          </button>
+          <button id="acessibilidade" class="opcao-tema">
+            <div class=" contain-img contain-img-acessibilidade">
+              <img src="assets/img/icon-accessibility.svg" alt="Acessibilidade ícone">
+            </div>
+            <span>Acessibilidade</span>
+          </button>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
