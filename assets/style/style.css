@@ -176,7 +176,9 @@ input:checked + .slider::before {
 }
 
 .contain-principal {
-  padding: 25px 30px 0 20px;
+  padding-top: 20px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .contain-txt {
@@ -189,34 +191,34 @@ input:checked + .slider::before {
 }
 
 .contain-txt h1 {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .txt-front-quiz {
-    display: block;
-    font-weight: bold;
+  display: block;
+  font-weight: bold;
 }
 
 .contain-txt p {
-    font-size: 16px;
-    font-style: italic;
-    font-weight: normal;
-    margin-bottom: 0px;
-    color: var(--texto-color-p);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 0px;
+  color: var(--texto-color-p);
 }
 
 .opcao-tema {
-    display: flex;
-    align-items: center;
-    background-color: #f7feff;
-    margin: 20px 0;
-    padding: 12px;
-    width: 100%;
-    cursor: pointer;
-    border: 1.5px solid var(--bg-botao);
-    box-shadow: 2.5px 3px 0 var(--bg-botao);
-    outline: none;
-    transition: ease 0.25s;
+  display: flex;
+  align-items: center;
+  background-color: #f7feff;
+  margin: 20px 0;
+  padding: 12px;
+  width: 100%;
+  cursor: pointer;
+  border: 1.5px solid var(--bg-botao);
+  box-shadow: 2.5px 3px 0 var(--bg-botao);
+  outline: none;
+  transition: ease 0.25s;
 }
 
 .contain-img img {
@@ -251,4 +253,68 @@ input:checked + .slider::before {
 .opcao-tema:hover {
     box-shadow: 5.5px 7px 0 #26303f;
     transform: scale(1.05, 1.05);
+}
+
+/* ========= MEDIA QUERY ========= */
+/* Tela media */
+@media screen and (min-width: 992px) {
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 75vh;
+  }
+  
+  .contain-header {
+    margin-bottom: 20px;
+  }
+  
+  .contain-sol img,
+  .contain-lua img {
+    width: 30px;
+  }
+
+  .contain-principal {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contain-txt {
+     gap: 40px;
+  }
+
+  .contain-txt h1 {
+    font-size: 42px;
+  }
+
+  .contain-txt p {
+    font-size: 20px;
+  }
+
+  .contain-temas {
+    min-width: 50%;
+  }
+
+  #html {
+    margin-top: 15px;
+  }
+
+  .opcao-tema {
+    gap: 10px;
+    margin: 25px 0;
+  }
+
+  .contain-img img {
+    width: 45px;
+  }
+
+  .opcao-tema span {
+    font-size: 20px;
+  }
 }
