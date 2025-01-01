@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Abre/fecha o menu ao clicar no botão
     menuNav.addEventListener('click', (event) => {
-        event.stopPropagation(); // Evita que o clique no botão feche o menu
+        event.stopPropagation();
         menuOptions.classList.toggle('open');
     });
 

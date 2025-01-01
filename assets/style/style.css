@@ -13,9 +13,9 @@
     --option-bg: #F4F6FA;
     --correct-color: #26D782;
     --invalido-cor: #EE5454;
-    --bg: url("/assets/img/pattern-background-mobile-light.svg");
-    --sol-src: url("/assets/img/icon-sun-light.svg");
-    --lua-src: url("/assets/img/icon-moon-light.svg");
+    --bg: url("../img/pattern-background-mobile-light.svg");
+    --sol-src: url("../img/icon-sun-light.svg");
+    --lua-src: url("../img/icon-moon-light.svg");
 }
 
 * {
@@ -34,7 +34,7 @@ body {
 /* ========= MODO ESCURO ========= */
 body.dark-mode {
     background-color: #313E51;
-    background-image: url("/assets/img/pattern-background-mobile-dark.svg");
+    background-image: url("../img/pattern-background-mobile-dark.svg");
 }
 
 h1, p, .opcao-tema span {
