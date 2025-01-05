@@ -2,42 +2,45 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../style.css">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css">
-  <script src="assets/js/script.js"></script>
+  <script src="../js/script.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Frontend Quiz</title>
 </head>
 <body>
   <div class="contain-tema">
     <div class="contain-sol">
-      <img src="assets/img/icon-sun-dark.svg" alt="Sol">
+      <img src="../img/icon-sun-dark.svg" alt="Sol">
     </div>
     <div class="switch">
       <input type="checkbox" id="toggle" />
       <label for="toggle" class="slider"></label>
     </div>
     <div class="contain-lua">
-      <img src="assets/img/icon-moon-dark.svg" alt="Lua">
+      <img src="../img/icon-moon-dark.svg" alt="Lua">
     </div>
   </div>
   <div class="login-container">
     <h1>Bem-vindo!</h1>
-    <p>Acesse sua conta e comece a jogar agora mesmo.</p>
-    <form action="assets/paginas/inicio.html">
+    <p>Crie sua conta e comece a jogar agora mesmo.</p>
+    <form>
+      <div class="group" style="margin: 30px auto;">
+        <i class="ri-id-card-line icon"></i>
+        <input class="input" type="text" placeholder="Nome">
+      </div>
       <div class="group">
         <i class="ri-user-line icon"></i>
         <input class="input" type="email" placeholder="Email">
       </div>
-      <div class="group">
+      <div class="group" style="margin-bottom: 20px;">
         <i class="ri-lock-2-line icon"></i>
         <input class="input" type="password" placeholder="Senha">
       </div>
-      <a href="#" class="forgot-password">Esqueceu sua senha?</a>
       <input type="submit" value="Entrar" class="btn-login">
     </form>
     <div class="login-footer">
-      <p>Não tem uma conta? <a href="assets/paginas/cadastro.html">Cadastre-se</a></p>
+        <p>Já tem uma conta? <a href="../../index.html">Entrar</a></p>
     </div>
   </div>
 </body>

@@ -153,7 +153,7 @@ body {
 }
 
 .dark-mode .icone-voltar:hover::before {
-  border-color: rgba(138, 180, 248, 0.5);
+  border-color: #8ab4f880;
 }
 
 .dark-mode .fa-solid, .dark-mode .fa-brands {
