@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../style/sobre.css">
+    <link rel="stylesheet" href="../style/perfil.css">
+    <title>Seu perfil</title>
+</head>
+<body>
+    <div class="sobre-nos">
+        <div class="contain-icone-voltar">
+            <a href="inicio.html" class="icone-voltar" title="Voltar">
+            <i class="ri-arrow-left-line"></i>
+            </a>
+      </div>
+        <header class="header-sobre-nos">
+            <h1>Seu perfil <i class="ri-user-smile-line"></i></h1>
+            <p>Altere as informações do seu cadastro aqui!</p>
+        </header>
+        <form action="assets/paginas/inicio.html"> 
+            <div class="card card-alterar-info">
+                <div class="group" style="margin: 30px auto;">
+                    <i class="ri-id-card-line icon"></i>
+                    <input class="input" type="text" placeholder="Nome">
+                </div>
+                <div class="group">
+                    <i class="ri-user-line icon"></i>
+                    <input class="input" type="password" placeholder="Email">
+                </div>
+                <div class="group">
+                    <i class="ri-lock-2-line icon"></i>
+                    <input class="input" type="password" placeholder="Senha">
+                </div>
+                <input type="submit" value="Salvar" class="btn-acao salvar group">
+            </div>
+            <div class="card">
+                <h2>Excluir conta</h2>
+                <p>
+                    Deseja excluir sua conta? Clique no botão: <input type="submit" value="Deletar" class="btn-acao deletar">
+                </p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
