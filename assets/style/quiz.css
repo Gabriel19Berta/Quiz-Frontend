@@ -160,6 +160,8 @@ main {
 
 .contain-pergunta {
   margin: 35px 0 35px 0;
+  text-align: justify;
+  line-height: 33px; 
 }
 
 .btn-pergunta {
@@ -178,6 +180,10 @@ main {
   font-size: 16px;
   text-align: justify;
   width: 100%;
+}
+
+.btn-pergunta:first-child {
+  margin-top: 0;
 }
 
 .btn-pergunta:hover {
@@ -251,4 +257,52 @@ body.dark-mode {
     width: 90%;
     margin: 0 auto;
   } 
+}
+
+@media screen and (min-width: 1366px) {
+  header {
+    margin: 25px auto;
+  }
+
+  .contain-identificao-tipo img {
+    width: 45px;
+  }
+
+  .contain-identificao-tipo p {
+    font-size: 20px;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contain-numero-questao {
+    font-size: 18px;
+  }
+
+  .contain-info-pergunta {
+    width: 45%;
+  }
+
+  .contain-info-alternativas {
+    width: 45%;
+  }
+
+  .contain-pergunta {
+    line-height: 36px; 
+  }
+
+  .contain-pergunta h2 {
+    font-size: 26px;
+  }
+
+  .btn-pergunta {
+    font-size: 18px;
+  }
+
+  .enviar-resposta {
+    font-size: 20px;
+  }
 }
