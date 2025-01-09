@@ -160,7 +160,6 @@ main {
 
 .contain-pergunta {
   margin: 35px 0 35px 0;
-  text-align: justify;
   line-height: 33px; 
 }
 
@@ -261,7 +260,7 @@ body.dark-mode {
 
 @media screen and (min-width: 1366px) {
   header {
-    margin: 25px auto;
+    margin: 30px auto;
   }
 
   .contain-identificao-tipo img {
