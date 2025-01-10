@@ -259,8 +259,13 @@ body.dark-mode {
 }
 
 @media screen and (min-width: 1366px) {
-  header {
-    margin: 30px auto;
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 auto;
   }
 
   .contain-identificao-tipo img {
