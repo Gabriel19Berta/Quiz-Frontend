@@ -162,7 +162,10 @@ body {
     font-size: 0.85rem;
     color: #3b82f6;
     text-decoration: none;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem auto;
+    cursor: pointer;
+    background-color: transparent; 
+    border: none;
 }
 
 .forgot-password:hover {
@@ -193,13 +196,16 @@ body {
     color: #333;
 }
 
-.login-footer a {
+.login-footer button {
     color: #4f46e5;
     text-decoration: none;
     font-weight: bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-.login-footer a:hover {
+.login-footer button:hover {
     text-decoration: underline;
 }
 

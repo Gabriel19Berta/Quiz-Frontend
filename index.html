@@ -9,17 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Frontend Quiz</title>
 </head>
-
-
 <body>
-  <!-- LOAD -->
-  <div id="wifi-loader">
-    <svg viewBox="0 0 86 86" class="circle-outer">
-      <circle r="40" cy="43" cx="43" class="back"></circle>
-      <circle r="40" cy="43" cx="43" class="front"></circle>
-    </svg>
-  </div>
-
   <div class="contain-tema">
     <div class="contain-sol">
       <img src="assets/img/icon-sun-dark.svg" alt="Sol">
@@ -35,21 +25,98 @@
   <div class="login-container">
     <h1>Bem-vindo!</h1>
     <p>Acesse sua conta e comece a jogar agora mesmo.</p>
-    <form action="assets/paginas/inicio.html">
+
+
+    <form>
       <div class="group">
         <i class="ri-user-line icon"></i>
-        <input class="input" type="email" placeholder="Email">
+        <input class="input" type="email" id="email" name="email" placeholder="Email">
       </div>
       <div class="group">
         <i class="ri-lock-2-line icon"></i>
-        <input class="input" type="password" placeholder="Senha">
+        <input class="input" type="password" id="password" name="password" placeholder="Senha">
       </div>
-      <a href="#" class="forgot-password">Esqueceu sua senha?</a>
-      <input type="submit" value="Entrar" class="btn-login">
+      <button id="recover-password-button" class="forgot-password" type="button" onclick="recoverPassword()">Esqueceu sua senha?</button>
+      <button class="btn-login" id="login-button" type="button" onclick="login()">Entrar</button>
     </form>
+
+
     <div class="login-footer">
-      <p>Não tem uma conta? <a href="assets/paginas/cadastro.html">Cadastre-se</a></p>
+      <p>Não tem uma conta? <button type="button" onclick="register()">Cadastre-se</button></p>
     </div>
   </div>
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js"></script>
+<script src="firebase-init.js"></script>
+<script src="assets/js/index.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    createLoader(); // Cria o loader assim que o DOM é carregado
+    createBlurLayer(); // Cria a camada de desfoque do fundo
+    showLoading(); // Mostra o loader imediatamente
+});
+
+window.addEventListener('load', () => {
+    // Oculta o loader assim que todos os recursos da página forem carregados
+    hideLoading();
+});
+
+function createLoader() {
+    const loaderDiv = document.createElement('div');
+    loaderDiv.id = 'wifi-loader';
+    loaderDiv.style.display = 'flex'; // Inicialmente visível
+    loaderDiv.style.justifyContent = 'center';
+    loaderDiv.style.alignItems = 'center';
+    loaderDiv.style.position = 'fixed';
+    loaderDiv.style.top = '0';
+    loaderDiv.style.left = '0';
+    loaderDiv.style.width = '100%';
+    loaderDiv.style.height = '100%';
+    loaderDiv.style.zIndex = '9999'; // Mantém o loader acima de tudo
+    loaderDiv.innerHTML = `
+        <svg viewBox="0 0 86 86" class="circle-outer">
+            <circle r="40" cy="43" cx="43" class="back"></circle>
+            <circle r="40" cy="43" cx="43" class="front"></circle>
+        </svg>
+    `;
+    document.body.appendChild(loaderDiv); // Adiciona o loader ao final do body
+}
+
+function createBlurLayer() {
+    const blurLayer = document.createElement('div');
+    blurLayer.id = 'blur-layer';
+    blurLayer.style.position = 'fixed';
+    blurLayer.style.top = '0';
+    blurLayer.style.left = '0';
+    blurLayer.style.width = '100vw'; // Use vw (viewport width) para garantir que cubra toda a tela
+    blurLayer.style.height = '100vh'; // Use vh (viewport height) para garantir que cubra toda a tela
+    blurLayer.style.zIndex = '9998'; // Fica atrás do loader
+    blurLayer.style.backgroundColor = 'rgba(0, 0, 0, 0.3)'; // Leve fundo escuro para visualizar o desfoque
+    blurLayer.style.display = 'none'; // Inicialmente oculto
+    document.body.appendChild(blurLayer); // Adiciona o fundo desfocado
+}
+
+
+function showLoading() {
+    const loader = document.getElementById('wifi-loader');
+    const blurLayer = document.getElementById('blur-layer');
+    if (loader && blurLayer) {
+        loader.style.display = 'flex';
+        blurLayer.style.display = 'block'; // Mostra o fundo desfocado
+    }
+}
+
+function hideLoading() {
+    const loader = document.getElementById('wifi-loader');
+    const blurLayer = document.getElementById('blur-layer');
+    if (loader && blurLayer) {
+        loader.style.display = 'none';
+        blurLayer.style.display = 'none'; // Oculta o fundo desfocado
+    }
+}
+
+</script>
 </html>
