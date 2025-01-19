@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../style/sobre.css">
     <link rel="stylesheet" href="../style/perfil.css">
     <link rel="stylesheet" href="../style/load.css">
+    <script src="../js/perfil.js"></script>
+    <script src="../js/loading.js"></script>
     <title>Seu perfil</title>
 </head>
 <body>
@@ -22,8 +24,11 @@
     <div class="sobre-nos">
         <div class="contain-icone-voltar">
             <a href="inicio.html" class="icone-voltar" title="Voltar">
-            <i class="ri-arrow-left-line"></i>
+                <i class="ri-arrow-left-line"></i>
             </a>
+            <button type="button" onclick="logout()" class="logout" title="Sair da conta">
+                <i class="ri-user-shared-line"></i>
+            </button>
       </div>
         <header class="header-sobre-nos">
             <h1>Seu perfil <i class="ri-user-smile-line"></i></h1>
@@ -54,4 +59,9 @@
         </form>
     </div>
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js"></script>
+<script src="../../firebase-init.js"></script>
+<script src="../../auth-guard.js"></script>
 </html>
