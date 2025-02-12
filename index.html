@@ -54,20 +54,25 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    createLoader(); // Cria o loader assim que o DOM é carregado
-    createBlurLayer(); // Cria a camada de desfoque do fundo
-    showLoading(); // Mostra o loader imediatamente
-});
+    createLoader();
+    createBlurLayer();
+    showLoading();
+  });
 
-window.addEventListener('load', () => {
-    // Oculta o loader assim que todos os recursos da página forem carregados
+  document.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+      login();
+    }
+  })
+
+  window.addEventListener('load', () => {
     hideLoading();
-});
+  });
 
-function createLoader() {
+  function createLoader() {
     const loaderDiv = document.createElement('div');
     loaderDiv.id = 'wifi-loader';
-    loaderDiv.style.display = 'flex'; // Inicialmente visível
+    loaderDiv.style.display = 'flex';
     loaderDiv.style.justifyContent = 'center';
     loaderDiv.style.alignItems = 'center';
     loaderDiv.style.position = 'fixed';
@@ -75,48 +80,48 @@ function createLoader() {
     loaderDiv.style.left = '0';
     loaderDiv.style.width = '100%';
     loaderDiv.style.height = '100%';
-    loaderDiv.style.zIndex = '9999'; // Mantém o loader acima de tudo
+    loaderDiv.style.zIndex = '9999';
     loaderDiv.innerHTML = `
         <svg viewBox="0 0 86 86" class="circle-outer">
             <circle r="40" cy="43" cx="43" class="back"></circle>
             <circle r="40" cy="43" cx="43" class="front"></circle>
         </svg>
     `;
-    document.body.appendChild(loaderDiv); // Adiciona o loader ao final do body
-}
+    document.body.appendChild(loaderDiv);
+  }
 
-function createBlurLayer() {
+  function createBlurLayer() {
     const blurLayer = document.createElement('div');
     blurLayer.id = 'blur-layer';
     blurLayer.style.position = 'fixed';
     blurLayer.style.top = '0';
     blurLayer.style.left = '0';
-    blurLayer.style.width = '100vw'; // Use vw (viewport width) para garantir que cubra toda a tela
-    blurLayer.style.height = '100vh'; // Use vh (viewport height) para garantir que cubra toda a tela
-    blurLayer.style.zIndex = '9998'; // Fica atrás do loader
-    blurLayer.style.backgroundColor = 'rgba(0, 0, 0, 0.3)'; // Leve fundo escuro para visualizar o desfoque
-    blurLayer.style.display = 'none'; // Inicialmente oculto
-    document.body.appendChild(blurLayer); // Adiciona o fundo desfocado
-}
+    blurLayer.style.width = '100vw';
+    blurLayer.style.height = '100vh';
+    blurLayer.style.zIndex = '9998';
+    blurLayer.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+    blurLayer.style.display = 'none';
+    document.body.appendChild(blurLayer);
+  }
 
 
-function showLoading() {
+  function showLoading() {
     const loader = document.getElementById('wifi-loader');
     const blurLayer = document.getElementById('blur-layer');
     if (loader && blurLayer) {
         loader.style.display = 'flex';
-        blurLayer.style.display = 'block'; // Mostra o fundo desfocado
+        blurLayer.style.display = 'block';
     }
-}
+  }
 
-function hideLoading() {
+  function hideLoading() {
     const loader = document.getElementById('wifi-loader');
     const blurLayer = document.getElementById('blur-layer');
     if (loader && blurLayer) {
         loader.style.display = 'none';
-        blurLayer.style.display = 'none'; // Oculta o fundo desfocado
+        blurLayer.style.display = 'none';
     }
-}
+  }
 
 </script>
 </html>
