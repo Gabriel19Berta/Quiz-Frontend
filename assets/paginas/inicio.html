@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="../style/inicio.css">
     <link rel="stylesheet" href="../style/load.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-    <script src="../js/script.js"></script>
-    <script src="../js/loading.js"></script>
     <title>Quiz Front</title>
 </head>
 <body>
@@ -29,7 +27,6 @@
           <a href="../paginas/sobre.html">Sobre</a>
         </div>
       </div>
-      <!-- ALTERAR TEMA (COR SITE) -->
       <div class="contain-tema">
         <div class="contain-sol">
           <img src="../img/icon-sun-dark.svg" alt="Sol">
@@ -44,7 +41,6 @@
       </div>
     </div>
 
-    <!-- PRINCIPAL -->
     <div class="contain-principal">
       <div class="contain-txt">
         <h1>Bem-vindo ao nosso <span class="txt-front-quiz">Frontend Quiz</span></h1>
@@ -70,7 +66,7 @@
             <span>JavaScript</span>
           </button>
           <button id="acessibilidade" class="opcao-tema">
-            <div class=" contain-img contain-img-acessibilidade">
+            <div class="contain-img contain-img-acessibilidade">
               <img src="../img/icon-accessibility.svg" alt="Acessibilidade ícone">
             </div>
             <span>Acessibilidade</span>
@@ -78,9 +74,20 @@
       </div>
     </div>
   </main>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/loading.js"></script>
+  <script>
+    document.querySelectorAll('.opcao-tema').forEach(button => {
+      button.addEventListener('click', function() {
+        const category = this.id
+        window.location.href = `quiz.html?category=${category}`
+      })
+    })
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js"></script>
+  <script src="../../firebase-init.js"></script>
+  <script src="../../auth-guard.js"></script>
 </body>
-<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js"></script>
-<script src="../../firebase-init.js"></script>
-<script src="../../auth-guard.js"></script>
 </html>
