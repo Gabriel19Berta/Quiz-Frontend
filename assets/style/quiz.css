@@ -305,3 +305,19 @@ body.dark-mode {
     font-size: 20px;
   }
 }
+
+.btn-pergunta.selected {
+  border: 1px solid #3498db !important;
+  background-color: #eaf4fc;
+  transform: scale(1.02);
+  box-shadow: 3px 4px 0px #3498db5e !important;
+}
+
+.btn-pergunta.selected span {
+  background-color: #3498db !important;
+}
+
+.dark-mode .btn-pergunta.selected {
+  background-color: #1b2b40;
+  border-color: #3498db !important;
+}

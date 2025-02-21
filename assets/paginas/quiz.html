@@ -224,10 +224,24 @@
       const submitBtn = document.querySelector('.enviar-resposta')
       const optionButtons = document.querySelectorAll('.btn-pergunta')
 
-      // Inicialização
       categoryIcon.src = `../img/icon-${category}.svg`
       categoryName.textContent = category.charAt(0).toUpperCase() + category.slice(1)
       const currentQuestions = questions[category]
+
+      switch (category) {
+        case 'html':
+          document.getElementById('category-icon').style.backgroundColor = '#FFF1E9';
+          break;
+        case 'js':
+          document.getElementById('category-icon').style.backgroundColor = '#EBF0FF';
+          break;
+        case 'accessibility':
+          document.getElementById('category-icon').style.backgroundColor = '#F6E7FF';
+          break;
+        default:
+          document.getElementById('category-icon').style.backgroundColor = '#E0FDEF';
+          break;
+      }
 
       function loadQuestion() {
         const question = currentQuestions[currentQuestionIndex]
@@ -248,25 +262,24 @@
       })
 
       submitBtn.addEventListener('click', () => {
-        const selected = document.querySelector('.btn-pergunta.selected')
-        if (!selected) return
+      const selected = document.querySelector('.btn-pergunta.selected');
+      if (!selected) return;
 
-        const correctIndex = currentQuestions[currentQuestionIndex].correct
-        if (selected === optionButtons[correctIndex]) {
-          score++
-        }
+      const correctIndex = currentQuestions[currentQuestionIndex].correct;
+      if (selected === optionButtons[correctIndex]) {
+        score++;
+      }
 
-        currentQuestionIndex++
-        
-        if (currentQuestionIndex < currentQuestions.length) {
-          loadQuestion()
-          optionButtons.forEach(btn => btn.classList.remove('selected'))
-          submitBtn.disabled = true
-        } else {
-          alert(`Quiz concluído! Pontuação: ${score}/${currentQuestions.length}`)
-          window.location.href = 'inicio.html'
-        }
-      })
+      currentQuestionIndex++;
+  
+      if (currentQuestionIndex < currentQuestions.length) {
+        loadQuestion();
+        optionButtons.forEach(btn => btn.classList.remove('selected'));
+        submitBtn.disabled = true;
+      } else {
+        window.location.href = `resultado.html?category=${category}&score=${score}&total=${currentQuestions.length}`;
+      }
+});
 
       loadQuestion()
     </script>
