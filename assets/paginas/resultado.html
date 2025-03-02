@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/load.css">
     <link rel="stylesheet" href="../style/resultado.css">
-    <script src="../js/script.js"></script>
-    <script src="../js/loading.js"></script>
     <title>Resultado</title>
 </head>
 <body>
@@ -18,10 +16,9 @@
     </div>
 
     <header>
-        <!-- Fazer script para encontrar a imagem correta -->
         <div class="contain-identificao-tipo">
-            <img src="../img/icon-css.svg">
-            <p>Acessibilidade</p>
+            <img id="category-icon" src="">
+            <p id="category-name"></p>
         </div>
         <div class="contain-tema">
             <div class="contain-sol">
@@ -39,17 +36,54 @@
 
     <main>
         <div class="contain-nota">
-            <h1>5</h1>
-            <p>De 10</p>
+            <h1 id="pontuacao">0</h1>
+            <p id="total">De 10</p>
         </div>
         <div class="contain-btn-nv">
-            <button>DE NOVO</button>
+            <button id="btn-reiniciar">DE NOVO</button>
         </div>
     </main>
-</body>
 
-<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js"></script>
-<script src="../../firebase-init.js"></script>
-<script src="../../auth-guard.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/loading.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        const score = urlParams.get('score');
+        const total = urlParams.get('total');
+        const categoryIcon = document.getElementById('category-icon');
+        const categoryName = document.getElementById('category-name');
+        const pontuacao = document.getElementById('pontuacao');
+        const totalElement = document.getElementById('total');
+        const btnReiniciar = document.getElementById('btn-reiniciar');
+
+        pontuacao.textContent = score;
+        totalElement.textContent = `De ${total}`;
+        categoryIcon.src = `../img/icon-${category}.svg`;
+        categoryName.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+
+        switch(category) {
+            case 'html':
+                categoryIcon.style.backgroundColor = '#FFF1E9';
+                break;
+            case 'css':
+                categoryIcon.style.backgroundColor = '#E0FDEF';
+                break;
+            case 'js':
+                categoryIcon.style.backgroundColor = '#EBF0FF';
+                break;
+            case 'acessibilidade':
+                categoryIcon.style.backgroundColor = '#F6E7FF';
+                break;
+        }
+
+        btnReiniciar.addEventListener('click', () => {
+            window.location.href = `quiz.html?category=${category}`;
+        });
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js"></script>
+    <script src="../../firebase-init.js"></script>
+    <script src="../../auth-guard.js"></script>
+</body>
 </html>
