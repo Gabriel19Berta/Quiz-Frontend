@@ -156,6 +156,10 @@
     color: black;
 }
 
+.dark-mode .logout {
+    border: none;
+}
+
 .logout {
     background-color: #4f46e5;
     box-shadow: none;

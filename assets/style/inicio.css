@@ -53,9 +53,10 @@ h1, p, .opcao-tema span {
 }
 
 .opcao-tema {
-    background-color: var(--option-bg);
-    transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
-    border: none;
+  background-color: var(--option-bg);
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+  border: none;
+  border-radius: 5px;
 }
 
 .dark-mode .opcao-tema {
