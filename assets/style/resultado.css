@@ -57,119 +57,135 @@ header {
   position: relative;
 }
 
-/* Estilização do contêiner do botão */
 .switch {
-    position: relative;
-    width: 50px;
-    height: 25px;
-  }
+  position: relative;
+  width: 50px;
+  height: 25px;
+}
   
-  /* Estilização do input (invisível) */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 25px;
+  transition: 0.4s;
+}
   
-    /* Estilização da "carcaça" do botão */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    border-radius: 25px;
-    transition: 0.4s;
-  }
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
   
-  /* Estilização do círculo que se move */
-  .slider::before {
-    position: absolute;
-    content: "";
-    height: 19px;
-    width: 19px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    border-radius: 50%;
-    transition: 0.4s;
-  }
-  
-  /* Alterações quando o checkbox está ativado */
+
 input:checked + .slider {
-    background-color: #afc3ff;
+  background-color: #afc3ff;
 }
 
 input:checked + .slider::before {
-    transform: translateX(25px);
+  transform: translateX(25px);
 }
 
 body.dark-mode {
-    background-color: #161616;
-    background-image: url("../img/pattern-background-mobile-dark.svg");
+  background-color: #161616;
+  background-image: url("../img/pattern-background-mobile-dark.svg");
 }
 
 .contain-nota {
-    color: #333;
-    background-color: #cedaff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 2px;
-    width: 80%;
-    height: 500px;
-    border-radius: 10px;
-    margin: 50px auto;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  color: #333;
+  background-color: #cedaff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+  width: 80%;
+  height: 500px;
+  border-radius: 10px;
+  margin: 50px auto;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .contain-nota h1 {
-    font-size: 65px;
+  font-size: 65px;
 }
 
 .contain-nota p {
-    font-size: 20px;
+  font-size: 20px;
 }
 
-.contain-btn-nv {
-    width: 80%;
-    margin: 0 auto;
+.contain-btn-acao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  gap: 10px;
 }
 
-.contain-btn-nv button {
-    padding: 15px;
-    margin: 20px auto;
-    cursor: pointer;
-    border: none;
-    border-radius: 12px;
-    font-size: 18px;
-    text-align: center;
-    width: 100%;
-    background-color: #3b83f6;
-    color: #fff;
-    font-weight: bold;
-    transition: all 0.3s;
+.contain-btn-acao a {
+  display: block;
+  padding: 15px;
+  width: 40%;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #4f46e5;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s;
 }
 
-.contain-btn-nv button:hover {
-    background-color: #4cc9f0;
+.btn-reiniciar {
+  padding: 15px;
+  width: 40%;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #3b83f6;
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s;
 }
 
-.contain-btn-nv button:active {
-    transform: scale(0.9);
+.btn-reiniciar:hover {
+  background-color: #4cc9f0;
 }
 
+.btn-reiniciar:active {
+  transform: scale(0.9);
+}
 
-
+.contain-btn-acao a:hover {
+  background-color: #6760ee;
+}
 
 .dark-mode p, .dark-mode h2, .dark-mode h1 {
-    color: white;
+  color: white;
 }
 
 .dark-mode .contain-nota {
-    background-color: #333;
-    box-shadow: rgba(73, 73, 73, 0.2) 0px 8px 24px;
+  background-color: #333;
+  box-shadow: rgba(73, 73, 73, 0.2) 0px 8px 24px;
 }
