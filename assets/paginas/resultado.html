@@ -35,13 +35,22 @@
     </header>
 
     <main>
-        <div class="contain-nota">
-            <h1 id="pontuacao">0</h1>
-            <p id="total">De 10</p>
+        <div>
+            <h1 class="frase-quiz-concluido">Quiz Concluído!</h1>
         </div>
+        <div class="card">
+            <div class="contain-nota">
+                <h1 id="pontuacao">0</h1>
+                <p id="total">De 10</p>
+            </div>
+            <div class="contain-smg-incentivo">
+                <p id="mensagem-incentivo" class="mensagem-incentivo"></p>
+            </div>
+        </div>
+        
         <div class="contain-btn-acao">
-            <a href="../paginas/inicio.html">INICIO</a>
-            <button class="btn-reiniciar" id="btn-reiniciar">DE NOVO</button>
+            <a href="../paginas/inicio.html" class="voltar-inicio btn-acao">INICIO</a>
+            <button class="btn-reiniciar btn-acao" id="btn-reiniciar">DE NOVO</button>
         </div>
     </main>
 
@@ -57,6 +66,23 @@
         const pontuacao = document.getElementById('pontuacao');
         const totalElement = document.getElementById('total');
         const btnReiniciar = document.getElementById('btn-reiniciar');
+        const mensagemIncentivo = document.getElementById('mensagem-incentivo');
+        const porcentagemAcerto = (score / total) * 100;
+
+        let mensagem = '';
+        if (porcentagemAcerto === 100) {
+            mensagem = '🎉 Perfeito! Você é incrível!';
+        } else if (porcentagemAcerto >= 80) {
+            mensagem = '👏 Excelente! Quase lá!';
+        } else if (porcentagemAcerto >= 60) {
+            mensagem = '👍 Bom trabalho! Continue assim!';
+        } else if (porcentagemAcerto >= 40) {
+            mensagem = '💪 Você consegue! Pratique mais um pouco!';
+        } else {
+            mensagem = '✨ Não desista! Tente novamente!';
+        }
+
+        mensagemIncentivo.textContent = mensagem;
 
         pontuacao.textContent = score;
         totalElement.textContent = `De ${total}`;
