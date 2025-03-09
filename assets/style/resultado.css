@@ -6,6 +6,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 body {
@@ -232,4 +234,11 @@ body.dark-mode {
 .dark-mode .card h1,
 .dark-mode .card p {
   color: #f1f1f1;
+}
+
+
+@media screen and (max-width: 400px) {
+  .btn-acao {
+    padding: 17px 20px;
+  }
 }
