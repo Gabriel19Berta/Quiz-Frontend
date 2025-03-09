@@ -1,267 +1,382 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/load.css">
-    <link rel="stylesheet" href="../style/quiz.css">    
-    <title>Quiz</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style/load.css">
+  <link rel="stylesheet" href="../style/quiz.css">
+  <title>Quiz</title>
 </head>
 <body>
-    <div id="wifi-loader">
-        <svg viewBox="0 0 86 86" class="circle-outer">
-            <circle r="40" cy="43" cx="43" class="back"></circle>
-            <circle r="40" cy="43" cx="43" class="front"></circle>
-        </svg>
+  <div id="wifi-loader">
+    <svg viewBox="0 0 86 86" class="circle-outer">
+      <circle r="40" cy="43" cx="43" class="back"></circle>
+      <circle r="40" cy="43" cx="43" class="front"></circle>
+    </svg>
+  </div>
+  <header>
+    <div class="contain-identificao-tipo">
+      <img id="category-icon" src="">
+      <p id="category-name"></p>
     </div>
-    <header>
-        <div class="contain-identificao-tipo">
-            <img id="category-icon" src="">
-            <p id="category-name"></p>
-        </div>
-        <div class="contain-tema">
-            <div class="contain-sol">
-              <img src="../img/icon-sun-dark.svg" alt="Sol">
-            </div>
-            <div class="switch">
-              <input type="checkbox" id="toggle" />
-              <label for="toggle" class="slider"></label>
-            </div>
-            <div class="contain-lua">
-              <img src="../img/icon-moon-dark.svg" alt="Lua">
-            </div>
-        </div>
-    </header>
+    <div class="contain-tema">
+      <div class="contain-sol">
+        <img src="../img/icon-sun-dark.svg" alt="Sol">
+      </div>
+      <div class="switch">
+        <input type="checkbox" id="toggle" />
+        <label for="toggle" class="slider"></label>
+      </div>
+      <div class="contain-lua">
+        <img src="../img/icon-moon-dark.svg" alt="Lua">
+      </div>
+    </div>
+  </header>
 
-    <main>
-        <div class="contain-info-pergunta">
-            <div class="contain-numero-questao">
-                <p id="question-number">Questão 1 de 10</p>
-            </div>
-    
-            <div class="contain-pergunta">
-                <h2 id="question-text"></h2>
-            </div>
-        </div>
+  <main>
+    <div class="contain-info-pergunta">
+      <div class="contain-numero-questao">
+        <p id="question-number">Questão 1 de 10</p>
+      </div>
 
-        <div class="contain-info-alternativas">
-            <div class="contain-alternativas">
-                <button class="btn-pergunta">
-                    <span>A</span>
-                    <p></p>
-                </button>
-                <button class="btn-pergunta">
-                    <span>B</span>
-                    <p></p>
-                </button>
-                <button class="btn-pergunta">
-                    <span>C</span>
-                    <p></p>
-                </button>
-                <button class="btn-pergunta">
-                    <span>D</span>
-                    <p></p>
-                </button>
-            </div>
-    
-            <div class="contain-enviar-responta">
-                <button class="enviar-resposta" disabled>
-                    RESPONDER
-                </button>
-            </div>
-        </div>
-    </main>
+      <div class="contain-pergunta">
+        <h2 id="question-text"></h2>
+      </div>
+    </div>
 
-    <script src="../js/script.js"></script>
-    <script src="../js/loading.js"></script>
-    <script>
-      const questions = {
-        html: [
-          {
-            question: "Qual tag HTML é usada para definir um hiperlink?",
-            options: ["<a>", "<link>", "<href>", "<url>"],
-            correct: 0
-          },
-          {
-            question: "Qual é a declaração correta do DOCTYPE para HTML5?",
-            options: [
-              "<!DOCTYPE html5>", 
-              "<!DOCTYPE HTML PUBLIC>", 
-              "<!DOCTYPE html>", 
-              "<!DOCTYPE HTML5>"
-            ],
-            correct: 2
-          },
-          {
-            question: "Qual atributo da tag <img> é obrigatório para acessibilidade?",
-            options: ["src", "alt", "title", "height"],
-            correct: 1
-          },
-          {
-            question: "Qual tag é usada para incluir CSS externo?",
-            options: ["<script>", "<style>", "<link>", "<css>"],
-            correct: 2
-          },
-          {
-            question: "Qual tag representa uma lista não ordenada?",
-            options: ["<ul>", "<ol>", "<li>", "<list>"],
-            correct: 0
-          }
-        ],
-        css: [
-          {
-            question: "Qual propriedade altera a cor do texto?",
-            options: ["color", "font-color", "text-color", "font-style"],
-            correct: 0
-          },
-          {
-            question: "Qual propriedade controla o espaçamento interno?",
-            options: ["margin", "padding", "spacing", "border"],
-            correct: 1
-          },
-          {
-            question: "Qual valor do display para flexbox?",
-            options: ["block", "flex", "inline", "grid"],
-            correct: 1
-          },
-          {
-            question: "Como selecionar elementos por classe?",
-            options: ["#classe", ".classe", "classe", "class.classe"],
-            correct: 1
-          },
-          {
-            question: "Qual propriedade define o tamanho da fonte?",
-            options: ["text-size", "font-size", "size", "font-style"],
-            correct: 1
-          }
-        ],
-        js: [
-          {
-            question: "Como declarar uma variável mutável?",
-            options: ["var", "let", "const", "variable"],
-            correct: 1
-          },
-          {
-            question: "Qual método adiciona um evento?",
-            options: ["addEventListener", "attachEvent", "onClick", "addClick"],
-            correct: 0
-          },
-          {
-            question: "O que é JSON.parse()?",
-            options: [
-              "Converte string para objeto",
-              "Converte objeto para string",
-              "Valida JSON",
-              "Nenhuma das anteriores"
-            ],
-            correct: 0
-          },
-          {
-            question: "O que console.log(typeof 42) retorna?",
-            options: ["number", "string", "object", "integer"],
-            correct: 0
-          },
-          {
-            question: "Qual sintaxe de arrow function está correta?",
-            options: [
-              "() => {}", 
-              "function => {}", 
-              "() => ", 
-              "=> {}"
-            ],
-            correct: 0
-          }
-        ],
-        acessibilidade: [
-          {
-            question: "Para que servem os atributos ARIA?",
-            options: [
-              "Melhorar estilo",
-              "Acessibilidade",
-              "Performance",
-              "Animações"
-            ],
-            correct: 1
-          },
-          {
-            question: "Elemento mais acessível para botão?",
-            options: ["<div>", "<span>", "<button>", "<a>"],
-            correct: 2
-          },
-          {
-            question: "Importância do alt em imagens?",
-            options: [
-              "SEO apenas",
-              "Acessibilidade apenas",
-              "Ambos",
-              "Nenhum"
-            ],
-            correct: 2
-          },
-          {
-            question: "Contraste WCAG para texto?",
-            options: ["3:1", "4.5:1", "5:1", "7:1"],
-            correct: 1
-          },
-          {
-            question: "Elemento para navegação principal?",
-            options: ["<nav>", "<div>", "<header>", "<main>"],
-            correct: 0
-          }
-        ]
-      }
+    <div class="contain-info-alternativas">
+      <div class="contain-alternativas">
+        <button class="btn-pergunta">
+          <span>A</span>
+          <p></p>
+        </button>
+        <button class="btn-pergunta">
+          <span>B</span>
+          <p></p>
+        </button>
+        <button class="btn-pergunta">
+          <span>C</span>
+          <p></p>
+        </button>
+        <button class="btn-pergunta">
+          <span>D</span>
+          <p></p>
+        </button>
+      </div>
 
-      const urlParams = new URLSearchParams(window.location.search)
-      const category = urlParams.get('category')
-      let currentQuestionIndex = 0
-      let score = 0
+      <div class="contain-enviar-responta">
+        <button class="enviar-resposta" disabled>
+          RESPONDER
+        </button>
+      </div>
+    </div>
+  </main>
 
-      const categoryIcon = document.getElementById('category-icon')
-      const categoryName = document.getElementById('category-name')
-      const questionNumber = document.getElementById('question-number')
-      const questionText = document.getElementById('question-text')
-      const options = document.querySelectorAll('.btn-pergunta p')
-      const submitBtn = document.querySelector('.enviar-resposta')
-      const optionButtons = document.querySelectorAll('.btn-pergunta')
+  <script src="../js/script.js"></script>
+  <script src="../js/loading.js"></script>
+  <script>
+    const questions = {
+      html: [
+        {
+          question: "Qual tag HTML é usada para definir um hiperlink?",
+          options: ["<a>", "<link>", "<href>", "<url>"],
+          correct: 0
+        },
+        {
+          question: "Qual é a declaração correta do DOCTYPE para HTML5?",
+          options: [
+            "<!DOCTYPE html5>",
+            "<!DOCTYPE HTML PUBLIC>",
+            "<!DOCTYPE html>",
+            "<!DOCTYPE HTML5>"
+          ],
+          correct: 2
+        },
+        {
+          question: "Qual atributo da tag <img> é obrigatório para acessibilidade?",
+          options: ["src", "alt", "title", "height"],
+          correct: 1
+        },
+        {
+          question: "Qual tag é usada para incluir CSS externo?",
+          options: ["<script>", "<style>", "<link>", "<css>"],
+          correct: 2
+        },
+        {
+          question: "Qual tag representa uma lista não ordenada?",
+          options: ["<ul>", "<ol>", "<li>", "<list>"],
+          correct: 0
+        },
+        {
+          question: "Qual tag HTML é usada para inserir uma imagem em uma página?",
+          options: ["<image>", "<img>", "<pic>", "<src>"],
+          correct: 1
+        },
+        {
+          question: "Qual atributo é usado para especificar o destino de um link em uma nova aba?",
+          options: ["target=\"_blank\"", "newtab=\"true\"", "href=\"new\"", "open=\"_new\""],
+          correct: 0
+        },
+        {
+          question: "Qual tag é usada para criar um parágrafo em HTML?",
+          options: ["<paragraph>", "<text>", "<p>", "<para>"],
+          correct: 2
+        },
+        {
+          question: "Qual elemento HTML é usado para criar uma quebra de linha?",
+          options: ["<break>", "<newline>", "<lb>", "<br>"],
+          correct: 3
+        },
+        {
+          question: "Qual atributo da tag <a> define o endereço para onde o link aponta?",
+          options: ["href", "src", "link", "dest"],
+          correct: 0
+        }
+      ],
+      css: [
+        {
+          question: "Qual propriedade altera a cor do texto?",
+          options: ["color", "font-color", "text-color", "font-style"],
+          correct: 0
+        },
+        {
+          question: "Qual propriedade controla o espaçamento interno?",
+          options: ["margin", "padding", "spacing", "border"],
+          correct: 1
+        },
+        {
+          question: "Qual valor do display para flexbox?",
+          options: ["block", "flex", "inline", "grid"],
+          correct: 1
+        },
+        {
+          question: "Como selecionar elementos por classe?",
+          options: ["#classe", "classe", ".classe", "class.classe"],
+          correct: 2
+        },
+        {
+          question: "Qual propriedade define o tamanho da fonte?",
+          options: ["text-size", "font-style", "size", "font-size"],
+          correct: 3
+        },
+        {
+          question: "Qual propriedade é usada para alterar a cor de fundo de um elemento?",
+          options: ["background-color", "color", "bg-color", "background"],
+          correct: 0
+        },
+        {
+          question: "Qual propriedade é usada para definir a largura de um elemento?",
+          options: ["width", "height", "size", "length"],
+          correct: 0
+        },
+        {
+          question: "Como você aplica um estilo a todos os parágrafos em CSS?",
+          options: ["p {}", "#p {}", ".p {}", "<p> {}"],
+          correct: 0
+        },
+        {
+          question: "Qual propriedade é usada para adicionar sombra ao texto?",
+          options: ["font-shadow", "box-shadow", "shadow", "text-shadow"],
+          correct: 3
+        },
+        {
+          question: "Qual propriedade é usada para tornar o texto em negrito?",
+          options: ["text-bold", "font-weight", "bold", "font-style"],
+          correct: 1
+        }
+      ],
+      js: [
+        {
+          question: "Como declarar uma variável mutável?",
+          options: ["var", "let", "const", "variable"],
+          correct: 1
+        },
+        {
+          question: "Qual método adiciona um evento?",
+          options: ["addEventListener", "attachEvent", "onClick", "addClick"],
+          correct: 0
+        },
+        {
+          question: "Qual sintaxe de arrow function está correta?",
+          options: ["=> {}", "function => {}", "() => ", " () => {}"],
+          correct: 3
+        },
+        {
+          question: "Qual comando exibe uma mensagem no console?",
+          options: ["console.log()", "log.console()", "print()", "console.write()"],
+          correct: 0
+        },
+        {
+          question: "Qual operador é usado para comparar valores e tipos em JavaScript?",
+          options: ["==", "!=", "===", "="],
+          correct: 2
+        },
+        {
+          question: "Como se declara uma constante em JavaScript?",
+          options: ["var", "let", "const", "constant"],
+          correct: 2
+        },
+        {
+          question: "Qual método converte uma string em número?",
+          options: ["parseInt()", "stringToNumber()", "toNumber()", "Number.parse()"],
+          correct: 0
+        },
+        {
+          question: "Qual estrutura é usada para executar um bloco de código várias vezes?",
+          options: ["if", "for", "switch", "try"],
+          correct: 1
+        },
+        {
+          question: "Qual palavra-chave é usada para definir uma função em JavaScript?",
+          options: ["func", "define", "function", "fun"],
+          correct: 2
+        },
+        {
+          question: "Qual método remove o último elemento de um array?",
+          options: ["pop()", "push()", "shift()", "remove()"],
+          correct: 0
+        }
+      ],
+      acessibilidade: [
+        {
+          question: "Importância do alt em imagens?",
+          options: [
+            "SEO apenas",
+            "Acessibilidade apenas",
+            "Ambos",
+            "Nenhum"
+          ],
+          correct: 2
+        },
+        {
+          question: "Qual atributo é usado para descrever imagens para leitores de tela?",
+          options: ["alt", "title", "aria-label", "description"],
+          correct: 0
+        },
+        {
+          question: "O que significa a sigla WCAG?",
+          options: [
+            "World Content Accessibility Guide",
+            "Web Content Accessibility Guidelines",
+            "Web Communication Accessibility Guide",
+            "World Communication Accessibility Guidelines"
+          ],
+          correct: 1
+        },
+        {
+          question: "Qual é a função do atributo aria-label?",
+          options: [
+            "Adicionar um título visual",
+            "Fornecer uma descrição para leitores de tela",
+            "Mudar o estilo de um elemento",
+            "Definir o link de uma imagem"
+          ],
+          correct: 1
+        },
+        {
+          question: "Qual elemento HTML é mais apropriado para destacar títulos?",
+          options: ["<div>", "<span>", "<h1> a <h6>", "<p>"],
+          correct: 2
+        },
+        {
+          question: "Por que é importante garantir contraste adequado de cores?",
+          options: [
+            "Para tornar o site mais bonito",
+            "Para facilitar a leitura por pessoas com baixa visão",
+            "Para otimizar o SEO",
+            "Para economizar energia"
+          ],
+          correct: 1
+        },
+        {
+          question: "Qual atributo ARIA informa se um elemento está expandido ou colapsado?",
+          options: ["aria-expanded", "aria-hidden", "aria-label", "aria-checked"],
+          correct: 0
+        },
+        {
+          question: "O que é navegação por teclado?",
+          options: [
+            "Uso do teclado para programar",
+            "Navegar em um site apenas com o teclado",
+            "Usar atalhos de teclado para abrir sites",
+            "Programar com atalhos de teclado"
+          ],
+          correct: 1
+        },
+        {
+          question: "Qual é o propósito do atributo 'tabindex'?",
+          options: [
+            "Definir a ordem de navegação pelo teclado",
+            "Adicionar um índice a tabelas",
+            "Inserir um espaço entre elementos",
+            "Definir o estilo de uma tabela"
+          ],
+          correct: 0
+        },
+        {
+          question: "Por que usar textos descritivos em links?",
+          options: [
+            "Para melhorar o design",
+            "Para otimizar o desempenho",
+            "Para ajudar usuários de leitores de tela a entenderem o destino do link",
+            "Para facilitar o carregamento da página"
+          ],
+          correct: 2
+        }
+      ]
+    }
 
-      categoryIcon.src = `../img/icon-${category}.svg`
-      categoryName.textContent = category.charAt(0).toUpperCase() + category.slice(1)
-      const currentQuestions = questions[category]
+    const urlParams = new URLSearchParams(window.location.search)
+    const category = urlParams.get('category')
+    let currentQuestionIndex = 0
+    let score = 0
 
-      switch (category) {
-        case 'html':
-          document.getElementById('category-icon').style.backgroundColor = '#FFF1E9';
-          break;
-        case 'js':
-          document.getElementById('category-icon').style.backgroundColor = '#EBF0FF';
-          break;
-        case 'accessibility':
-          document.getElementById('category-icon').style.backgroundColor = '#F6E7FF';
-          break;
-        default:
-          document.getElementById('category-icon').style.backgroundColor = '#E0FDEF';
-          break;
-      }
+    const categoryIcon = document.getElementById('category-icon')
+    const categoryName = document.getElementById('category-name')
+    const questionNumber = document.getElementById('question-number')
+    const questionText = document.getElementById('question-text')
+    const options = document.querySelectorAll('.btn-pergunta p')
+    const submitBtn = document.querySelector('.enviar-resposta')
+    const optionButtons = document.querySelectorAll('.btn-pergunta')
 
-      function loadQuestion() {
-        const question = currentQuestions[currentQuestionIndex]
-        questionNumber.textContent = `Questão ${currentQuestionIndex + 1} de ${currentQuestions.length}`
-        questionText.textContent = question.question
-        
-        options.forEach((option, index) => {
-          option.textContent = question.options[index]
-        })
-      }
+    categoryIcon.src = `../img/icon-${category}.svg`
+    categoryName.textContent = category.charAt(0).toUpperCase() + category.slice(1)
+    const currentQuestions = questions[category]
 
-      optionButtons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-          optionButtons.forEach(btn => btn.classList.remove('selected'))
-          button.classList.add('selected')
-          submitBtn.disabled = false
-        })
+    switch (category) {
+      case 'html':
+        document.getElementById('category-icon').style.backgroundColor = '#FFF1E9';
+        break;
+      case 'js':
+        document.getElementById('category-icon').style.backgroundColor = '#EBF0FF';
+        break;
+      case 'accessibility':
+        document.getElementById('category-icon').style.backgroundColor = '#F6E7FF';
+        break;
+      default:
+        document.getElementById('category-icon').style.backgroundColor = '#E0FDEF';
+        break;
+    }
+
+    function loadQuestion() {
+      const question = currentQuestions[currentQuestionIndex]
+      questionNumber.textContent = `Questão ${currentQuestionIndex + 1} de ${currentQuestions.length}`
+      questionText.textContent = question.question
+
+      options.forEach((option, index) => {
+        option.textContent = question.options[index]
       })
+    }
 
-      submitBtn.addEventListener('click', () => {
+    optionButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        optionButtons.forEach(btn => btn.classList.remove('selected'))
+        button.classList.add('selected')
+        submitBtn.disabled = false
+      })
+    })
+
+    submitBtn.addEventListener('click', () => {
       const selected = document.querySelector('.btn-pergunta.selected');
       if (!selected) return;
 
@@ -271,7 +386,7 @@
       }
 
       currentQuestionIndex++;
-  
+
       if (currentQuestionIndex < currentQuestions.length) {
         loadQuestion();
         optionButtons.forEach(btn => btn.classList.remove('selected'));
@@ -279,13 +394,13 @@
       } else {
         window.location.href = `resultado.html?category=${category}&score=${score}&total=${currentQuestions.length}`;
       }
-});
+    });
 
-      loadQuestion()
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js"></script>
-    <script src="../../firebase-init.js"></script>
-    <script src="../../auth-guard.js"></script>
+    loadQuestion()
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js"></script>
+  <script src="../../firebase-init.js"></script>
+  <script src="../../auth-guard.js"></script>
 </body>
 </html>

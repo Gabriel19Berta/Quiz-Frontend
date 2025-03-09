@@ -270,6 +270,7 @@ body.dark-mode {
 
   .contain-identificao-tipo p {
     font-size: 20px;
+    text-transform: uppercase;
   }
   
   main {

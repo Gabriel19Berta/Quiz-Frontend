@@ -35,14 +35,12 @@ body {
     height: 25px;
   }
   
-  /* Estilização do input (invisível) */
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
   
-    /* Estilização da "carcaça" do botão */
   .slider {
     position: absolute;
     cursor: pointer;
@@ -54,8 +52,7 @@ body {
     border-radius: 25px;
     transition: 0.4s;
   }
-  
-  /* Estilização do círculo que se move */
+
   .slider::before {
     position: absolute;
     content: "";
@@ -67,8 +64,7 @@ body {
     border-radius: 50%;
     transition: 0.4s;
   }
-  
-  /* Alterações quando o checkbox está ativado */
+
   input:checked + .slider {
     background-color: #afc3ff;
   }
@@ -210,7 +206,7 @@ body {
 }
 
 body.dark-mode {
-    background-color: #161616; /* Cor de fundo escura */
+    background-color: #161616;
 }
 
 .contain-tema {
@@ -222,7 +218,6 @@ body.dark-mode {
     right: 15px;
 }
 
-/* Estilos para o modo dark */
 .dark-mode .login-container {
     background-color: #333;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
