@@ -2,11 +2,18 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="assets/style/load.css">
+
   <script src="assets/js/script.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js"></script>
+  <script src="firebase-init.js"></script>
+  <script src="assets/js/index.js"></script>
+
   <title>Login - Frontend Quiz</title>
 </head>
 <body>
@@ -45,11 +52,6 @@
   </div>
 </body>
 
-<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-auth-compat.js"></script>
-<script src="firebase-init.js"></script>
-<script src="assets/js/index.js"></script>
-
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     createLoader();
@@ -80,10 +82,10 @@
     loaderDiv.style.height = '100%';
     loaderDiv.style.zIndex = '9999';
     loaderDiv.innerHTML = `
-        <svg viewBox="0 0 86 86" class="circle-outer">
-            <circle r="40" cy="43" cx="43" class="back"></circle>
-            <circle r="40" cy="43" cx="43" class="front"></circle>
-        </svg>
+      <svg viewBox="0 0 86 86" class="circle-outer">
+        <circle r="40" cy="43" cx="43" class="back"></circle>
+        <circle r="40" cy="43" cx="43" class="front"></circle>
+      </svg>
     `;
     document.body.appendChild(loaderDiv);
   }
@@ -107,8 +109,8 @@
     const loader = document.getElementById('wifi-loader');
     const blurLayer = document.getElementById('blur-layer');
     if (loader && blurLayer) {
-        loader.style.display = 'flex';
-        blurLayer.style.display = 'block';
+      loader.style.display = 'flex';
+      blurLayer.style.display = 'block';
     }
   }
 
@@ -116,8 +118,8 @@
     const loader = document.getElementById('wifi-loader');
     const blurLayer = document.getElementById('blur-layer');
     if (loader && blurLayer) {
-        loader.style.display = 'none';
-        blurLayer.style.display = 'none';
+      loader.style.display = 'none';
+      blurLayer.style.display = 'none';
     }
   }
 
