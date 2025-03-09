@@ -235,3 +235,10 @@ body.dark-mode {
 .dark-mode .card p {
   color: #f1f1f1;
 }
+
+
+@media screen and (max-width: 400px) {
+  .btn-acao {
+    padding: 17px 20px;
+  }
+}
