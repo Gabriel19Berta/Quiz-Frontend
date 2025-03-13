@@ -7,12 +7,17 @@ firebase.auth().onAuthStateChanged(user =>  {
 function register() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
+    const confirmarPassword = document.getElementById("confirmar_password").value;
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
-        window.location.href = "inicio.html"
-    }).catch(error => {
-        alert(getErrorMessage(error));
-    })
+    if (password != confirmarPassword) {
+        alert('As senhas não coincidem. Por favor, verifique e tente novamente.')
+    } else {
+        firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
+            window.location.href = "inicio.html"
+        }).catch(error => {
+            alert(getErrorMessage(error));
+        })
+    };
 }
 
 function getErrorMessage(error) {
